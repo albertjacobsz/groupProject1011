@@ -3,9 +3,10 @@
 SearchPattern function was created using the inspiration of https://www.youtube.com/watch?v=ZMQWjslBlbU Code kits's psuedocode
 removeSpaces function was created using the inspiration of https://www.geeksforgeeks.org/remove-spaces-from-a-given-string/ Code
 */
+
+//todo change functionality
 #include <iostream>
 #include <string.h>
-#define MAX_CHAR_LENGTH 160
 using namespace std;
 class Search{
     private:
@@ -16,7 +17,7 @@ class Search{
         string removeSpaces(string);
         bool searchPattern(string,string);
     public:
-        void mainProcess();
+        void mainProcess(string, string);
 };
 int Search::min(int j, int i){
     if(j < i){
@@ -60,14 +61,6 @@ string Search::removeSpaces(string str){
     str.erase(remove(str.begin(), str.end(), ' '), str.end());
     return str;
 }
-void Search::mainProcess(){
-    cout<< "Enter in a keyword" << endl;
-    cin>> query;
-   // query = removeSpaces(query);
-    string text = "world.com Hello";
-    cout<< query<<endl;
-   // text = removeSpaces(text);
-    cout<< text<< endl;
+void Search::mainProcess(string pattern, string text){
     bool yn = searchPattern(text,query);
-    cout <<"Is string found?: " << yn<< endl;
 }
