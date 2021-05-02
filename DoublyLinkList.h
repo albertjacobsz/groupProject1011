@@ -45,7 +45,7 @@ Node* reverse(Node* list){
         }
     }else{
         while(!list->next){
-            list= list->next;
+            list = list->next;
         }
     }
     return list;
