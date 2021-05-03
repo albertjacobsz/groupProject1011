@@ -1,43 +1,42 @@
 //todo add this file
-//#include "structures.h"
-#include <iostream>
+#include "Subject.h"
+
 class Node{
     private:
-        //Subject subject;
-        int placeholder;
+        Subject subject;
+        
     public:
         Node *prev;
         Node *next;
         Node();
-        Node* push(Node*);
+        Node* push(Node*, Subject);
         //todo change this to struct
-        void setData(int);
-        int getData();
+        void setData(Subject);
+        Subject getData();
         Node* reverse(Node*);
 };
 //todo change this
-void Node::setData(int place){
-    placeholder = place;
+void Node::setData(Subject place){
+    subject = place;
 }
 //todo change this
-int Node::getData(){
-    return placeholder;
+Subject Node::getData(){
+    return subject;
 }
 Node::Node(){
     //todo remove placeholder
-    placeholder = 0;
     prev = NULL;
     next = NULL;
 }
-Node* push(Node* list){
+Node* Node::push(Node* list, Subject data){
     Node *newNode = new Node();
-    newNode->setData(0);
+    newNode->setData(data);
     newNode->next = NULL;
     newNode->prev = list;
     list->next=newNode;
     return list;
 }
-Node* reverse(Node* list){
+Node* Node::reverse(Node* list){
     //if the node next is null, it means the node is at the end of the list
     if(list->next== NULL){
         while(!list->prev){
