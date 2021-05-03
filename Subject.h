@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-
+#pragma once
 struct Subject{
     int level;//subject level
     char subCode[10];//
