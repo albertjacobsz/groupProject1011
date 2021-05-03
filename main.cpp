@@ -1,31 +1,48 @@
+
 #include "Subject.h"
 #include "DoublyLinkList.h"
 #include "Search.h"
-
+#define _CRT_SECURE_NO_WARNINGS
+#include<cstring>
+#include <iomanip>
+#include <iostream>
+using namespace std;
 //START PROTOTYPE DECLARATIONS
 string charArr2String(char*);
 Node init_subject();
 string userInput();
 void startPrint();
 //END PROTOTYPE DECLARATIONS
+
 int main(){
     startPrint();
     int cont;
-    while(cin>>cont){
-        if(!(cin>>cont)){
-            cout<<"please only enter in an int" << endl;
-            cin.clear();
-            cin.ignore(10000,'\n');
-        }
-        if(cont != 1){
-            cout<< "please only enter in 1" << endl;
-        }
+    while(cin>>cont || cont != 1){
         if(cont == 1){
             break;
         }
+        cout<< "please enter in one" << endl;
     }
-    return 0;
+    
+    Subject info[81];
+    Subject *p = info;
+    p = init_data();
+    //test
+    for (int i = 45; i<56;i++){
+        cout << setw(15) << "Level: " << p[i].level << endl;
+        cout << setw(15) << "Code: " << p[i].subCode << endl;
+        cout << setw(15) << "Title: " << p[i].subTitle << endl;
+        cout << setw(15) << "Credit: " << p[i].credit << endl;
+        for(int j=0; j<5;j++){
+            cout << setw(15) << "Pre-Req: " << p[i].preReq[j] << endl;
+        }
+        cout << setw(15) << "lecture: " << p[i].lecture << endl;
+        cout << endl;
+    }
+
+ return 0;
 }
+
 string charArr2String(char* array){
     int i = 0;
     string sentence = "";
@@ -52,3 +69,4 @@ string userInput(){
     getline(cin,user);
     return user;
 }
+
