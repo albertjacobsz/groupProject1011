@@ -6,17 +6,16 @@ removeSpaces function was created using the inspiration of https://www.geeksforg
 
 //todo change functionality
 #include <string.h>
-using namespace std;
+#include <string>
 class Search{
     private:
-        string query;
         //void badCharHeuristic(string, int[MAX_CHAR_LENGTH]);
         int min(int, int);
-        int last(string, int, string);
-        string removeSpaces(string);
-        bool searchPattern(string,string);
+        int last(std::string, int, std::string);
+        std::string removeSpaces(std::string);
+        
     public:
-        void mainProcess(string, string);
+        bool searchPattern(std::string,std::string);
 };
 int Search::min(int j, int i){
     if(j < i){
@@ -27,7 +26,7 @@ int Search::min(int j, int i){
         return j;
     }
 }
-int Search::last(string text, int i, string query){
+int Search::last(std::string text, int i, std::string query){
     int size = query.size();
 
     for(int j = size; j>=0; j--){
@@ -37,7 +36,7 @@ int Search::last(string text, int i, string query){
     }
     return -1;
 }
-bool Search::searchPattern(string txt, string query){
+bool Search::searchPattern(std::string query, std::string txt){
     int n = txt.size();
     int i = query.size()-1;
     int j = query.size() - 1;
@@ -56,10 +55,8 @@ bool Search::searchPattern(string txt, string query){
     }
     return false;
 }
-string Search::removeSpaces(string str){
+/*std::string Search::removeSpaces(std::string str){
     str.erase(remove(str.begin(), str.end(), ' '), str.end());
     return str;
 }
-void Search::mainProcess(string pattern, string text){
-    bool yn = searchPattern(text,query);
-}
+*/
