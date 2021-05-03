@@ -1,6 +1,6 @@
 //todo add this file
 #include "Subject.h"
-
+using namespace std;
 class Node{
     private:
         Subject subject;
@@ -34,16 +34,16 @@ Node* Node::push(Node* list, Subject data){
     newNode->next = NULL;
     newNode->prev = list;
     list->next=newNode;
-    return list;
+    return newNode;
 }
 Node* Node::reverse(Node* list){
     //if the node next is null, it means the node is at the end of the list
-    if(list->next== NULL){
-        while(!list->prev){
+    if(list->next == NULL){
+        while(list->prev != NULL){
             list = list->prev;
         }
     }else{
-        while(!list->next){
+        while(list->next != NULL){
             list = list->next;
         }
     }
