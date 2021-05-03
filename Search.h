@@ -5,7 +5,6 @@ removeSpaces function was created using the inspiration of https://www.geeksforg
 */
 
 //todo change functionality
-#include <iostream>
 #include <string.h>
 using namespace std;
 class Search{
