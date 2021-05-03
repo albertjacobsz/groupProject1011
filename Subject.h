@@ -1,4 +1,8 @@
 #include <string.h>
+#include <iostream>
+#include <string.h>
+using namespace std;
+
 struct Subject{
     int level;//subject level
     char subCode[10];//
