@@ -19,12 +19,13 @@ int main(){
     startPrint();
     //get user input to continue to the query
     int cont;
-    while(cin>>cont || cont != 1){
-        if(cont == 1){
-            break;
-        }
+    cin >> cont;
+    //TODO PREVENT USERS FROM CREATING AN INFINITE LOOP
+    while(!(cin>>cont) || cont != 1){
         cout<< "please enter in one" << endl;
+        cin >> cont;
     }
+    //END TODO
     //get query input
     string query = userInput();
     cout << "Searching for " << query << endl;
@@ -42,6 +43,12 @@ int main(){
         Subject subject = p[i];
         //turn the title into a string
         string data = charArr2String(p[i].subTitle);
+        //TODO FIX THIS BUG
+        data = toLowerCase(data);
+        query = toLowerCase(query);
+        cout << data << endl;
+        cout << query << endl;
+        //END TODO
         //see whether pattern occurs in the string
         bool yn = search.searchPattern(query,data);
         //if its true
@@ -95,7 +102,18 @@ string charArr2String(char* array){
     return sentence;
 }
 string toLowerCase(string text){
-
+    int size = text.size();
+    string newString = "";
+    for(int i = 0; i<size; i++){
+        char temp = newString[i];
+        if(int(temp) >= 65 && int(temp) <= 90){
+            int off = int(temp) - 65;
+            off = off + 97;
+            char temp = off;
+        }
+        newString += temp;
+    }
+    return newString;
 }
 void startPrint(){
     cout << "Welcome to the COMP database" << endl;
