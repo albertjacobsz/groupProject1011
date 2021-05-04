@@ -13,22 +13,20 @@ Node init_subject();
 string userInput();
 void startPrint();
 string toLowerCase(string);
+int dataValidation(int);
+string dataValidation(string);
+void printData(Node*);
 //END PROTOTYPE DECLARATIONS
 
 int main(){
     startPrint();
     //get user input to continue to the query
     int cont;
-    cin >> cont;
-    //TODO PREVENT USERS FROM CREATING AN INFINITE LOOP
-    while(!(cin>>cont) || cont != 1){
-        cout<< "please enter in one" << endl;
-        cin >> cont;
-    }
+    cont = dataValidation(cont);
     //END TODO
     //get query input
     string query = userInput();
-    cout << "Searching for " << query << endl;
+    cout << "\nSearching for " << query << endl;
     //initialize all the data for the query
     Search search;
     Subject info[81];
@@ -38,16 +36,18 @@ int main(){
     Node *list = new Node();
     //check if the the Link list exists
     bool outer = false;
+    //int that counts how many instances were found
+    int found = 0;
     for(int i = 45; i<56; i++){
         //get subject at specific i index
         Subject subject = p[i];
         //turn the title into a string
         string data = charArr2String(p[i].subTitle);
         //TODO FIX THIS BUG
-        data = toLowerCase(data);
-        query = toLowerCase(query);
-        cout << data << endl;
-        cout << query << endl;
+        //data = toLowerCase(data);
+        //query = toLowerCase(query);
+        //cout << data << endl;
+        //cout << query << endl;
         //END TODO
         //see whether pattern occurs in the string
         bool yn = search.searchPattern(query,data);
@@ -57,38 +57,15 @@ int main(){
            list = list->push(list, subject);
            //ensure that we know the link list has objects inside of it
            outer = true;
+           found += 1;
         }
         
     }
-    //if we knoow the link list has objects inside of it
+    cout << "\n\nThere were " << found << " occurences found for the search term: " << query << "\n\n" << endl;
+    //if we know the link list has objects inside of it
     if(outer == true){
-        //reverse the link list, since the link list's current pointer is at the end of the link list
-        list = list->reverse(list);
-        //print out all the titles
-        while(list->next != NULL){
-            cout << list->getData().subTitle <<endl;
-            //and move on the next node
-            list = list->next;
-        }
-        //since while loop exits at the last node (without printing it) we print the data of the last node
-        cout << list->getData().subTitle <<endl;
+        printData(list);
     }
-    
-
-    //test
-    /*
-    for (int i = 45; i<56;i++){
-        cout << setw(15) << "Level: " << p[i].level << endl;
-        cout << setw(15) << "Code: " << p[i].subCode << endl;
-        cout << setw(15) << "Title: " << p[i].subTitle << endl;
-        cout << setw(15) << "Credit: " << p[i].credit << endl;
-        for(int j=0; j<5;j++){
-            cout << setw(15) << "Pre-Req: " << p[i].preReq[j] << endl;
-        }
-        cout << setw(15) << "lecture: " << p[i].lecture << endl;
-        cout << endl;
-    }
-    */
  return 0;
 }
 
@@ -116,9 +93,11 @@ string toLowerCase(string text){
     return newString;
 }
 void startPrint(){
-    cout << "Welcome to the COMP database" << endl;
-    cout << "In this program, you can find the information about all the subjects offered by the COMP department" << endl;
-    cout << "To search for a subject enter 1" << endl;
+    cout << "//----Welcome to the COMP database----\\\\" << endl;
+    cout << "This is the menu enter:" << endl;
+    cout << "1- To search a subject title using a key word" << endl;
+    cout << "2- To search a subject code by using a subject code" <<endl;
+    cout << "4- To quit" << endl;
 }
 string userInput(){
     // todo add data verification
@@ -130,3 +109,23 @@ string userInput(){
     return userIn;
 }
 
+int dataValidation(int cont){
+    cin >> cont;
+    //TODO PREVENT USERS FROM CREATING AN INFINITE LOOP
+    while(cont != 1){
+        cout<< "please enter in one" << endl;
+        cin >> cont;
+    }
+    return cont;
+}
+void printData(Node *list){
+    list = list->reverse(list);
+    list = list->next;
+    cout << "| CODE | TITLE \t\t |Pre-Requisites\t | CA | Exam | " << endl;
+    cout << "------------------------------------------------------------" << endl;
+    while(list->next != NULL){
+        cout << "|" <<list->getData().subCode <<" | "<< list->getData().subTitle << " | "<< list->getData().preReq[0]<<"| " << list->getData().ca <<" | " <<  list->getData().exam <<" | \n" << endl;
+        list = list->next;
+    }
+    cout << "|" <<list->getData().subCode <<" | "<< list->getData().subTitle << " | "<< list->getData().preReq[0]<<" | " << list->getData().ca <<" | " <<  list->getData().exam <<" |\n\n" << endl;
+}
