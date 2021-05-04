@@ -7,6 +7,7 @@ removeSpaces function was created using the inspiration of https://www.geeksforg
 //todo change functionality
 #include <string.h>
 #include <string>
+#include <cstring>
 class Search{
     private:
         //void badCharHeuristic(string, int[MAX_CHAR_LENGTH]);
@@ -16,6 +17,7 @@ class Search{
         
     public:
         bool searchPattern(std::string,std::string);
+        bool searchPattern2(char*, char*);
 };
 int Search::min(int j, int i){
     if(j < i){
@@ -54,6 +56,26 @@ bool Search::searchPattern(std::string query, std::string txt){
         }
     }
     return false;
+}
+//Yakobus idea:
+bool Search::searchPattern2(char* query, char* txt){
+    int queryLength = strlen(query);
+    int stringLength = strlen(txt);
+    char temp[70];
+    int step = queryLength - stringLength;
+    return true;
+    strcpy(temp, NULL);
+    if(queryLength<=stringLength){
+        for(int b = 0; b < step; b++){
+            for(int a = b,c = 0; a < queryLength + b, c<queryLength; a++, c++){
+                temp[c] = txt[a];//copy text to a temporary
+            }
+            if(strncmp(temp,query,queryLength)==0){//if temporary and query match
+                    return true;
+                }
+        }
+    }
+    return true;
 }
 /*std::string Search::removeSpaces(std::string str){
     str.erase(remove(str.begin(), str.end(), ' '), str.end());

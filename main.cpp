@@ -37,6 +37,27 @@ int main(){
     Node *list = new Node();
     //check if the the Link list exists
     bool outer = false;
+/*//Sam's experiment:
+    cout << "Enter Sam Query: ";
+    char quero[70];
+    cin >> quero;
+    char *ptrQuero = quero;
+    char *ptrSub = 0;
+
+    for(int i = 45; i<56;i++){
+        Subject subject = p[i];
+        ptrSub = subject.subTitle;
+        cout << subject.subTitle << endl;
+        if (search.searchPattern2(ptrQuero,ptrSub) == true){
+            cout << subject.subTitle << endl;
+        }
+        else{
+            //cout << "search pattern fail";
+        }
+        //cout << "for looping" << i;
+    }
+    cout << "out of for loop";
+ */
     for(int i = 45; i<56; i++){
         //get subject at specific i index
         Subject subject = p[i];
@@ -51,7 +72,6 @@ int main(){
            //ensure that we know the link list has objects inside of it
            outer = true;
         }
-        
     }
     //if we knoow the link list has objects inside of it
     if(outer == true){
@@ -94,9 +114,9 @@ string charArr2String(char* array){
     }
     return sentence;
 }
-string toLowerCase(string text){
-
-}
+/*string toLowerCase(string text){
+return;
+}*/
 void startPrint(){
     cout << "Welcome to the COMP database" << endl;
     cout << "In this program, you can find the information about all the subjects offered by the COMP department" << endl;
