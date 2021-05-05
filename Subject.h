@@ -212,14 +212,92 @@ Subject* init_data(){
     //60 - initialize COMP4142:
     info[60].level = 4;
     strcpy(info[60].subCode,"COMP4142");
-    strcpy(info[59].subTitle, "E-Payment and Cryptocurrency");
-    info[59].credit = 3;
-    info[59].weight = 3;
-    strcpy(info[59].preReq[0],"COMP3334");
-    info[59].lecture = 39;
-    info[59].tls = 71;
-    info[59].ca = 55;
-    info[59].exam = 45;
+    strcpy(info[60].subTitle, "E-Payment and Cryptocurrency");
+    info[60].credit = 3;
+    info[60].weight = 3;
+    strcpy(info[60].preReq[0],"COMP3334");
+    info[60].lecture = 39;
+    info[60].tls = 71;
+    info[60].ca = 55;
+    info[60].exam = 45;
+
+    //61 - Initialize COMP4146
+    info[61].level = 4;
+    strcpy(info[61].subCode,"comp4146");
+    strcpy(info[61].subTitle, "computational finance");
+    info[61].credit = 3;
+    info[61].weight = 3;
+    strcpy(info[61].preReq[0],"nil");
+    info[61].lecture = 39;
+    info[61].tls = 66;
+    info[61].ca = 55;
+    info[61].exam = 45;
+
+    //62 - Initialize COMP4322
+    info[62].level = 4;
+    strcpy(info[62].subCode,"comp4322");
+    strcpy(info[62].subTitle, "internetworking protocol software and management");
+    info[62].credit = 3;
+    info[62].weight = 3;
+    strcpy(info[62].preReq[0],"comp2322");
+    info[62].lecture = 39;
+    info[62].tls = 66;
+    info[62].ca = 50;
+    info[62].exam = 50;
+
+    //63 - Initialize COMP4332
+    info[63].level = 4;
+    strcpy(info[63].subCode,"comp4332");
+    strcpy(info[63].subTitle, "mobile security: principles and practice");
+    info[63].credit = 3;
+    info[63].weight = 3;
+    strcpy(info[63].preReq[0],"comp1011");
+    strcpy(info[63].preReq[1],"comp2322");
+    strcpy(info[63].preReq[2],"comp2432");
+    strcpy(info[63].preReq[3],"comp1411");
+    strcpy(info[63].preReq[4],"comp3334");
+    info[63].lecture = 39;
+    info[63].tls = 66;
+    info[63].ca = 100;
+    info[63].exam = 0;
+
+    //64 - Initialize COMP4334
+    info[64].level = 4;
+    strcpy(info[64].subCode,"comp4334");
+    strcpy(info[64].subTitle, "principles and practice of internet security");
+    info[64].credit = 3;
+    info[64].weight = 3;
+    strcpy(info[64].preReq[0],"comp3334");
+    info[64].lecture = 39;
+    info[64].tls = 94;
+    info[64].ca = 60;
+    info[64].exam = 40;
+
+     //65 - Initialize COMP4342
+    info[65].level = 4;
+    strcpy(info[65].subCode,"comp4342");
+    strcpy(info[65].subTitle, "mobile computing");
+    info[65].credit = 3;
+    info[65].weight = 3;
+    strcpy(info[65].preReq[0],"comp2411");
+    strcpy(info[65].preReq[1],"comp2432");
+    strcpy(info[65].preReq[2],"comp1411");
+    info[65].lecture = 26;
+    info[65].tls = 66;
+    info[65].ca = 55;
+    info[65].exam = 45;
+
+    //66 - Initialize COMP4422
+    info[66].level = 4;
+    strcpy(info[66].subCode,"comp4422");
+    strcpy(info[66].subTitle, "computer graphics");
+    info[66].credit = 3;
+    info[66].weight = 3;
+    strcpy(info[66].preReq[0],"comp2011");
+    info[66].lecture = 39;
+    info[66].tls = 66;
+    info[66].ca = 60;
+    info[66].exam = 40;
 
     //75 - initialize COMP4442:
     info[75].level = 4;

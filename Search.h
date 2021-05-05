@@ -7,6 +7,7 @@ class Search{
         
     public:
         bool searchPattern(std::string,std::string);
+        bool searchPattern2(char*, char*);
 };
 
 bool Search::searchPattern(std::string query, std::string txt){

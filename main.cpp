@@ -24,6 +24,7 @@ int main(){
     startPrint();
     //get user input to continue to the query
     int cont;
+    int found = 0;
     cont = dataValidation(cont);
     //END TODO
     //get query input
@@ -38,8 +39,27 @@ int main(){
     Node *list = new Node();
     //check if the the Link list exists
     bool outer = false;
-    //int that counts how many instances were found
-    int found = 0;
+/*//Sam's experiment:
+    cout << "Enter Sam Query: ";
+    char quero[70];
+    cin >> quero;
+    char *ptrQuero = quero;
+    char *ptrSub = 0;
+
+    for(int i = 45; i<56;i++){
+        Subject subject = p[i];
+        ptrSub = subject.subTitle;
+        cout << subject.subTitle << endl;
+        if (search.searchPattern2(ptrQuero,ptrSub) == true){
+            cout << subject.subTitle << endl;
+        }
+        else{
+            //cout << "search pattern fail";
+        }
+        //cout << "for looping" << i;
+    }
+    cout << "out of for loop";
+ */
     for(int i = 45; i<56; i++){
         //get subject at specific i index
         Subject subject = p[i];
@@ -61,7 +81,6 @@ int main(){
            outer = true;
            found += 1;
         }
-        
     }
     cout << "\n\nThere were " << found << " occurences found for the search term: " << query << "\n\n" << endl;
     //if we know the link list has objects inside of it
