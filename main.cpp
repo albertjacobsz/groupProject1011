@@ -1,4 +1,7 @@
 
+#include<cstring>
+#include <string.h>
+
 #include "Subject.h"
 #include "DoublyLinkList.h"
 #include "Search.h"
@@ -12,7 +15,6 @@ string charArr2String(char*);
 Node init_subject();
 string userInput();
 void startPrint();
-string toLowerCase(string);
 int dataValidation(int);
 string dataValidation(string);
 void printData(Node*);
@@ -77,20 +79,6 @@ string charArr2String(char* array){
         i++;
     }
     return sentence;
-}
-string toLowerCase(string text){
-    int size = text.size();
-    string newString = "";
-    for(int i = 0; i<size; i++){
-        char temp = newString[i];
-        if(int(temp) >= 65 && int(temp) <= 90){
-            int off = int(temp) - 65;
-            off = off + 97;
-            char temp = off;
-        }
-        newString += temp;
-    }
-    return newString;
 }
 void startPrint(){
     cout << "//----Welcome to the COMP database----\\\\" << endl;
