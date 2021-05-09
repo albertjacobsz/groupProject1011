@@ -17,19 +17,38 @@ void startPrint();
 int dataValidation(int);
 string dataValidation(string);
 void printData(Node*);
+void printByPhrase(string);
+void printByCode(string);
 //END PROTOTYPE DECLARATIONS
 
 int main(){
     startPrint();
     //get user input to continue to the query
     int cont;
-    int found = 0;
     cont = dataValidation(cont);
-    //END TODO
+    if(cont == 1){
+        string query = userInput();
+        cout << "\nSearching for " << query << endl;
+        printByPhrase(query);
+    }else if(cont == 2){
+        string userCode = "";
+        while(userCode.length() != 7){
+            cout<< "Enter in an a subject code (including COMP)" << endl;
+            getline(cin,userCode);
+            cin.ignore();
+        }
+        printByCode(userCode);
+    }
+    else{
+        return 0;
+    }
     //get query input
-    string query = userInput();
-    cout << "\nSearching for " << query << endl;
-    //initialize all the data for the query
+
+ return 0;
+}
+void printByCode(string query){
+        //initialize all the data for the query
+    int found = 0;
     Search search;
     Subject info[81];
     Subject *p = info;
@@ -38,38 +57,11 @@ int main(){
     Node *list = new Node();
     //check if the the Link list exists
     bool outer = false;
-/*//Sam's experiment:
-    cout << "Enter Sam Query: ";
-    char quero[70];
-    cin >> quero;
-    char *ptrQuero = quero;
-    char *ptrSub = 0;
-
-    for(int i = 45; i<56;i++){
-        Subject subject = p[i];
-        ptrSub = subject.subTitle;
-        cout << subject.subTitle << endl;
-        if (search.searchPattern2(ptrQuero,ptrSub) == true){
-            cout << subject.subTitle << endl;
-        }
-        else{
-            //cout << "search pattern fail";
-        }
-        //cout << "for looping" << i;
-    }
-    cout << "out of for loop";
- */
-    for(int i = 45; i<67; i++){
+    for(int i = 45; i<81; i++){
         //get subject at specific i index
         Subject subject = p[i];
         //turn the title into a string
-        string data = charArr2String(p[i].subTitle);
-        //TODO FIX THIS BUG
-        //data = toLowerCase(data);
-        //query = toLowerCase(query);
-        //cout << data << endl;
-        //cout << query << endl;
-        //END TODO
+        string data = charArr2String(p[i].subCode);
         //see whether pattern occurs in the string
         bool yn = search.searchPattern(query,data);
         //if its true
@@ -86,9 +78,40 @@ int main(){
     if(outer == true){
         printData(list);
     }
- return 0;
 }
-
+void printByPhrase(string query){
+    //initialize all the data for the query
+    int found = 0;
+    Search search;
+    Subject info[81];
+    Subject *p = info;
+    p = init_data();
+    //Create new Link list
+    Node *list = new Node();
+    //check if the the Link list exists
+    bool outer = false;
+    for(int i = 45; i<81; i++){
+        //get subject at specific i index
+        Subject subject = p[i];
+        //turn the title into a string
+        string data = charArr2String(p[i].subTitle);
+        //see whether pattern occurs in the string
+        bool yn = search.searchPattern(query,data);
+        //if its true
+        if(yn){
+            //add the specific subject to the link list
+           list = list->push(list, subject);
+           //ensure that we know the link list has objects inside of it
+           outer = true;
+           found += 1;
+        }
+    }
+    cout << "\n\nThere were " << found << " occurences found for the search term: " << query << "\n\n" << endl;
+    //if we know the link list has objects inside of it
+    if(outer == true){
+        printData(list);
+    }
+}
 string charArr2String(char* array){
     int i = 0;
     string sentence = "";
@@ -118,8 +141,8 @@ string userInput(){
 int dataValidation(int cont){
     cin >> cont;
     //TODO PREVENT USERS FROM CREATING AN INFINITE LOOP
-    while(cont != 1){
-        cout<< "please enter in one" << endl;
+    while(cont != 1 && cont != 2 && cont != 4){
+        cout<< "please enter in 1 or 2 or 4" << endl;
         cin >> cont;
     }
     return cont;
