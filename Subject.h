@@ -263,11 +263,11 @@ Subject* init_data(){
 
     //64 - Initialize COMP4334
     info[64].level = 4;
-    strcpy(info[64].subCode,"comp4334");
-    strcpy(info[64].subTitle, "principles and practice of internet security");
+    strcpy(info[64].subCode,"COMP4334");
+    strcpy(info[64].subTitle, "Principles and Practice of Internet Security");
     info[64].credit = 3;
     info[64].weight = 3;
-    strcpy(info[64].preReq[0],"comp3334");
+    strcpy(info[64].preReq[0],"COMP3334");
     info[64].lecture = 39;
     info[64].tls = 94;
     info[64].ca = 60;
@@ -299,6 +299,108 @@ Subject* init_data(){
     info[66].ca = 60;
     info[66].exam = 40;
 
+    //67 - initialize COMP4423
+     info[67].level = 4;
+    strcpy(info[67].subCode,"COMP4423");
+    strcpy(info[67].subTitle, "Computer Vision");
+    info[67].credit = 3;
+    info[67].weight = 3;
+    strcpy(info[67].preReq[0],"COMP2011");
+    strcpy(info[67].preReq[1],"EIE2106 (EIE student)");
+    info[66].lecture = 39;
+    info[66].tls = 80;
+    info[66].ca = 55;
+    info[66].exam = 45;
+
+    //68 - initialize COMP4431
+
+    info[68].level = 4;
+    strcpy(info[68].subCode,"COMP4431");
+    strcpy(info[68].subTitle, "Artificial Intelligence");
+    info[68].credit = 3;
+    info[68].weight = 3;
+    strcpy(info[68].preReq[0],"COMP2011");
+    info[68].lecture = 39;
+    info[68].tls = 80;
+    info[68].ca = 55;
+    info[68].exam = 45;
+
+    //69 - initialize COMP4432
+
+    info[69].level = 4;
+    strcpy(info[69].subCode,"COMP4432");
+    strcpy(info[69].subTitle, "Machine Learning");
+    info[69].credit = 3;
+    info[69].weight = 3;
+    strcpy(info[69].preReq[0],"COMP2011");
+    info[69].lecture = 39;
+    info[69].tls = 80;
+    info[69].ca = 55;
+    info[69].exam = 45;
+
+    //70 - initialize COMP4433
+    info[70].level = 4;
+    strcpy(info[70].subCode,"COMP4433");
+    strcpy(info[70].subTitle, "Data Mining and Data Warehousing");
+    info[70].credit = 3;
+    info[70].weight = 3;
+    strcpy(info[70].preReq[0],"COMP2411");
+    info[70].lecture = 39;
+    info[70].tls = 70;
+    info[70].ca = 55;
+    info[70].exam = 45;
+
+    //71 - initialize COMP4434
+    info[71].level = 4;
+    strcpy(info[71].subCode,"COMP4434");
+    strcpy(info[71].subTitle, "Big Data Analytics");
+    info[71].credit = 3;
+    info[71].weight = 3;
+    strcpy(info[71].preReq[0],"AMA1104");
+    strcpy(info[71].preReq[1],"COMP1011");
+    strcpy(info[71].preReq[2],"COMP2011");
+    strcpy(info[71].preReq[3],"COMP2411");
+    info[71].lecture = 39;
+    info[71].tls = 77;
+    info[71].ca = 60;
+    info[71].exam = 40;
+
+    //72 - initialize COMP4435
+    info[72].level = 4;
+    strcpy(info[72].subCode,"COMP4435");
+    strcpy(info[72].subTitle, "Dependable Computing");
+    info[72].credit = 3;
+    info[72].weight = 3;
+    strcpy(info[72].preReq[0],"Nil");
+    info[72].lecture = 39;
+    info[72].tls = 66;
+    info[72].ca = 55;
+    info[72].exam = 45;
+
+    //73 - initialize COMP4438
+    info[73].level = 4;
+    strcpy(info[73].subCode,"COMP4438");
+    strcpy(info[73].subTitle, "Embedded Software");
+    info[73].credit = 3;
+    info[73].weight = 3;
+    strcpy(info[73].preReq[0],"COMP3438");
+    info[73].lecture = 39;
+    info[73].tls = 80;
+    info[73].ca = 55;
+    info[73].exam = 45;
+
+    //74 - initialize COMP4441
+    info[74].level = 4;
+    strcpy(info[74].subCode,"COMP4441");
+    strcpy(info[74].subTitle, "Enterprise Middleware Systems and Applications");
+    info[74].credit = 3;
+    info[74].weight = 3;
+    strcpy(info[74].preReq[0],"COMP1011");
+    info[74].lecture = 39;
+    info[74].tls = 66;
+    info[74].ca = 55;
+    info[74].exam = 45;
+
     //75 - initialize COMP4442:
     info[75].level = 4;
     strcpy(info[75].subCode,"COMP4442");
@@ -308,9 +410,71 @@ Subject* init_data(){
     strcpy(info[75].preReq[0],"COMP2322");
     strcpy(info[75].preReq[1], "COMP3421");
     info[75].lecture = 39;
-    info[75].tls = 0;
+    info[75].tls =66;
     info[75].ca = 55;
     info[75].exam = 45;
+
+     //76 - initialize COMP4512:
+    info[76].level = 4;
+    strcpy(info[76].subCode,"COMP4512");
+    strcpy(info[76].subTitle, "Intellectual Property Protection and Management");
+    info[76].credit = 3;
+    info[76].weight = 3;
+    strcpy(info[76].preReq[0],"Nil");
+    info[76].lecture = 39;
+    info[76].tls = 66;
+    info[76].ca = 55;
+    info[76].exam = 45;
+
+    //77 - initialize COMP4531:
+    info[77].level = 4;
+    strcpy(info[77].subCode,"COMP4512");
+    strcpy(info[77].subTitle, "Emerging Topics in FinTech");
+    info[77].credit = 3;
+    info[77].weight = 3;
+    strcpy(info[77].preReq[0],"Nil");
+    info[77].lecture = 39;
+    info[77].tls = 78;
+    info[77].ca = 55;
+    info[77].exam = 45;
+
+    //78 - initialize COMP4911:
+    info[78].level = 4;
+    strcpy(info[78].subCode,"COMP4911-12");
+    strcpy(info[78].subTitle, "Capstone Project");
+    info[78].credit = 3;
+    info[78].weight = 3;
+    strcpy(info[78].preReq[0],"COMP4911 for COMP4912");
+    info[78].lecture = 26;
+    info[78].tls = 214;
+    info[78].ca = 100;
+    info[78].exam = 0;
+
+    //79 - initialize COMP4913:
+    info[79].level = 4;
+    strcpy(info[79].subCode,"COMP4913");
+    strcpy(info[79].subTitle, "Capstone Project");
+    info[79].credit = 6;
+    info[79].weight = 4;
+    strcpy(info[79].preReq[0],"Nil");
+    info[79].lecture = 0;
+    info[79].tls = 210;
+    info[79].ca = 100;
+    info[79].exam = 0;
+
+    //80 - initialize COMP4921:
+    info[80].level = 4;
+    strcpy(info[80].subCode,"COMP4921");
+    strcpy(info[80].subTitle, "Final Year Project");
+    info[80].credit = 9;
+    info[80].weight = 6;
+    strcpy(info[80].preReq[0],"Nil");
+    info[80].lecture = 0;
+    info[80].tls = 378;
+    info[80].ca = 100;
+    info[80].exam = 0;
+
+
 
     return info;
 }

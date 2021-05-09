@@ -1,7 +1,6 @@
 
 #include<cstring>
 #include <string.h>
-
 #include "Subject.h"
 #include "DoublyLinkList.h"
 #include "Search.h"
@@ -60,7 +59,7 @@ int main(){
     }
     cout << "out of for loop";
  */
-    for(int i = 45; i<56; i++){
+    for(int i = 45; i<67; i++){
         //get subject at specific i index
         Subject subject = p[i];
         //turn the title into a string
@@ -128,7 +127,7 @@ int dataValidation(int cont){
 void printData(Node *list){
     list = list->reverse(list);
     list = list->next;
-    cout << "| CODE | TITLE \t\t |Pre-Requisites\t | CA | Exam | " << endl;
+    cout << setw(10) << "| CODE " <<setw(40) << "| TITLE \t\t |Pre-Requisites\t | CA | Exam | " << endl;
     cout << "------------------------------------------------------------" << endl;
     while(list->next != NULL){
         cout << "|" <<list->getData().subCode <<" | "<< list->getData().subTitle << " | "<< list->getData().preReq[0]<<"| " << list->getData().ca <<" | " <<  list->getData().exam <<" | \n" << endl;
