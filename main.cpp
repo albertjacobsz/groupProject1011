@@ -11,11 +11,9 @@
 using namespace std;
 //START PROTOTYPE DECLARATIONS
 string charArr2String(char*);
-Node init_subject();
 string userInput();
 void startPrint();
-int dataValidation(int);
-string dataValidation(string);
+void pathDecider(int);
 void printData(Node*);
 void searchSub();//search title
 void searchCode();
@@ -23,6 +21,8 @@ void searchPre();
 //END PROTOTYPE DECLARATIONS
 
 int main(){
+    int choice;
+    do{
     startPrint();
     //get user input to continue to the query
     /*
@@ -30,23 +30,25 @@ int main(){
     cont = dataValidation(cont);
     */
     //int found = 0;
-    int choice;
     cin >> choice;
-    switch(choice){
-    case 1: 
-        searchSub();
-    break;
-    case 2:
-        searchCode();//search subject code
-    break;
-    case 3:
-        searchPre();//search Pre Requisite
-    default:
-    break;
-    }
-   
-    
+    pathDecider(choice);
+    }while(choice != 4);
+    cout<<"Thank you for using the COMP Database" << endl;
  return 0;
+}
+void pathDecider(int choice){
+        switch(choice){
+        case 1: 
+            searchSub();
+            break;
+        case 2:
+            searchCode();//search subject code
+            break;
+        case 3:
+            searchPre();//search Pre Requisite
+        default:
+            break;
+        }
 }
 string charArr2String(char* array){
     int i = 0;
@@ -73,16 +75,6 @@ string userInput(){
     string userIn;
     userIn = charArr2String(user);
     return userIn;
-}
-
-int dataValidation(int cont){
-    cin >> cont;
-    //TODO PREVENT USERS FROM CREATING AN INFINITE LOOP
-    while(cont != 1 && cont != 2 && cont != 4){
-        cout<< "please enter in 1 or 2 or 4" << endl;
-        cin >> cont;
-    }
-    return cont;
 }
 void printData(Node *list){
     list = list->reverse(list);
