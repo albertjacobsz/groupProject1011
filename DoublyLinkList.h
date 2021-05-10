@@ -10,21 +10,17 @@ class Node{
         Node *next;
         Node();
         Node* push(Node*, Subject);
-        //todo change this to struct
         void setData(Subject);
         Subject getData();
         Node* reverse(Node*);
 };
-//todo change this
 void Node::setData(Subject place){
     subject = place;
 }
-//todo change this
 Subject Node::getData(){
     return subject;
 }
 Node::Node(){
-    //todo remove placeholder
     prev = NULL;
     next = NULL;
 }
