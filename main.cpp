@@ -48,7 +48,6 @@ int main(){
     
  return 0;
 }
-
 string charArr2String(char* array){
     int i = 0;
     string sentence = "";
@@ -79,8 +78,8 @@ string userInput(){
 int dataValidation(int cont){
     cin >> cont;
     //TODO PREVENT USERS FROM CREATING AN INFINITE LOOP
-    while(cont != 1){
-        cout<< "please enter in one" << endl;
+    while(cont != 1 && cont != 2 && cont != 4){
+        cout<< "please enter in 1 or 2 or 4" << endl;
         cin >> cont;
     }
     return cont;
