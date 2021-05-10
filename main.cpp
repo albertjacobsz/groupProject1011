@@ -24,13 +24,7 @@ int main(){
     int choice;
     do{
     startPrint();
-    //get user input to continue to the query
-    /*
-    int cont;
-    cont = dataValidation(cont);
-    */
-    //int found = 0;
-    cin >> choice;
+    cin>>choice;
     pathDecider(choice);
     }while(choice != 4);
     cout<<"Thank you for using the COMP Database" << endl;
@@ -70,7 +64,6 @@ void startPrint(){
 string userInput(){
     // todo add data verification
     char user[160];
-    cout<< "Please enter in a key word or phrase" << endl;
     cin >> user;
     string userIn;
     userIn = charArr2String(user);
@@ -157,6 +150,7 @@ void searchCode(){
      int found = 0;
     //END TODO
     //get query input
+    cout<< "Please enter in a subject code" << endl;
     string query = userInput();
     cout << "\nSearching for: " << query << endl;
     //initialize all the data for the query
@@ -200,6 +194,7 @@ void searchPre(){
      int found = 0;
     //END TODO
     //get query input
+    cout<< "Please enter in a keyword" << endl;
     string query = userInput();
     cout << "\nSearching for: " << query << endl;
     //initialize all the data for the query
