@@ -56,8 +56,8 @@ string charArr2String(char* array){
 void startPrint(){
     cout << "//----Welcome to the COMP database----\\\\" << endl;
     cout << "This is the menu enter:" << endl;
-    cout << "1- To search a subject title using a key word" << endl;
-    cout << "2- To search a subject code by using a subject code" <<endl;
+    cout << "1- To search for a subject by using a key word" << endl;
+    cout << "2- To search for a subject by using a subject code" <<endl;
     cout << "3- To search what a subject is a pre-requisite to" << endl;
     cout << "4- To quit" << endl;
 }
@@ -105,6 +105,7 @@ void searchSub(){
     int found = 0;
   //END TODO
     //get query input
+    cout<< "Please enter in a keyword" << endl;
     string query = userInput();
     cout << "\nSearching for " << query << endl;
     //initialize all the data for the query
